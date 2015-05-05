@@ -1,0 +1,20 @@
+<!doctype html>
+<html xmlns:ng="http://angularjs.org">
+	<head>
+		<title></title>
+		<script src="Scripts/angular.js"></script>
+		<script src="Scripts/angular-loader.js"></script>
+		<script src="app.js"></script>
+	</head>
+	<body>	
+		<div ng-app="FormRegister">
+			<form ng-controller="FormRegisterController">Username:
+				<input name="input" ng-model="UserName" required>
+				<span class="error" ng-show="myForm.input.$error.required">Required!</span>
+				<br>
+				<code>Username = {{UserName}}</code>
+				<br>
+			</form>
+		</div>	
+	</body>
+</html>

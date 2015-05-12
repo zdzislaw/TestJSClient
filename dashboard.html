@@ -1,0 +1,383 @@
+<html lang="en">
+  
+  <head>
+    <title>dc.js - Bar Chart Example</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/dc.css">
+  </head>
+  
+  <body>
+    <div id="yearChart" class="dc-chart"></div>
+    <div id="demo" class="dc-chart">
+      <script type="text/javascript" src="js/d3.js"></script>
+      <script type="text/javascript" src="js/crossfilter.js"></script>
+      <script type="text/javascript" src="js/dc.js"></script>
+      <script type="text/javascript">
+        var nfp = {
+          "@odata.context":"http://www.alivefrp.com.br/odata/$metadata#VW_NFPaulistaHeaderYearMonth","value":[
+            {
+              "ClientDocument":"33009217838","IssueMonth":1,"IssueYear":2012,"InvoiceValue":118.9
+            },{
+              "ClientDocument":"33009217838","IssueMonth":1,"IssueYear":2013,"InvoiceValue":672.66000000000008
+            },{
+              "ClientDocument":"33009217838","IssueMonth":1,"IssueYear":2014,"InvoiceValue":619.71999999999991
+            },{
+              "ClientDocument":"33009217838","IssueMonth":1,"IssueYear":2015,"InvoiceValue":328.68999999999994
+            },{
+              "ClientDocument":"33009217838","IssueMonth":2,"IssueYear":2012,"InvoiceValue":83.1
+            },{
+              "ClientDocument":"33009217838","IssueMonth":2,"IssueYear":2013,"InvoiceValue":308.19000000000005
+            },{
+              "ClientDocument":"33009217838","IssueMonth":2,"IssueYear":2014,"InvoiceValue":179.95
+            },{
+              "ClientDocument":"33009217838","IssueMonth":2,"IssueYear":2015,"InvoiceValue":435.46999999999997
+            },{
+              "ClientDocument":"33009217838","IssueMonth":3,"IssueYear":2012,"InvoiceValue":75.699999999999989
+            },{
+              "ClientDocument":"33009217838","IssueMonth":3,"IssueYear":2013,"InvoiceValue":1184.55
+            },{
+              "ClientDocument":"33009217838","IssueMonth":3,"IssueYear":2014,"InvoiceValue":606.18000000000006
+            },{
+              "ClientDocument":"33009217838","IssueMonth":3,"IssueYear":2015,"InvoiceValue":547.23
+            },{
+              "ClientDocument":"33009217838","IssueMonth":4,"IssueYear":2012,"InvoiceValue":489.25
+            },{
+              "ClientDocument":"33009217838","IssueMonth":4,"IssueYear":2013,"InvoiceValue":78.22
+            },{
+              "ClientDocument":"33009217838","IssueMonth":4,"IssueYear":2014,"InvoiceValue":1108.5400000000002
+            },{
+              "ClientDocument":"33009217838","IssueMonth":4,"IssueYear":2015,"InvoiceValue":195.96000000000004
+            },{
+              "ClientDocument":"33009217838","IssueMonth":5,"IssueYear":2012,"InvoiceValue":392.07
+            },{
+              "ClientDocument":"33009217838","IssueMonth":5,"IssueYear":2013,"InvoiceValue":753.73
+            },{
+              "ClientDocument":"33009217838","IssueMonth":5,"IssueYear":2014,"InvoiceValue":1235.3399999999997
+            },{
+              "ClientDocument":"33009217838","IssueMonth":5,"IssueYear":2015,"InvoiceValue":89.19
+            },{
+              "ClientDocument":"33009217838","IssueMonth":6,"IssueYear":2012,"InvoiceValue":458.55999999999995
+            },{
+              "ClientDocument":"33009217838","IssueMonth":6,"IssueYear":2013,"InvoiceValue":966.41
+            },{
+              "ClientDocument":"33009217838","IssueMonth":6,"IssueYear":2014,"InvoiceValue":302.95
+            },{
+              "ClientDocument":"33009217838","IssueMonth":7,"IssueYear":2012,"InvoiceValue":790.73
+            },{
+              "ClientDocument":"33009217838","IssueMonth":7,"IssueYear":2013,"InvoiceValue":366.84
+            },{
+              "ClientDocument":"33009217838","IssueMonth":7,"IssueYear":2014,"InvoiceValue":50.0
+            },{
+              "ClientDocument":"33009217838","IssueMonth":8,"IssueYear":2012,"InvoiceValue":512.31999999999994
+            },{
+              "ClientDocument":"33009217838","IssueMonth":8,"IssueYear":2013,"InvoiceValue":5964.7799999999988
+            },{
+              "ClientDocument":"33009217838","IssueMonth":8,"IssueYear":2014,"InvoiceValue":55.9
+            },{
+              "ClientDocument":"33009217838","IssueMonth":9,"IssueYear":2012,"InvoiceValue":473.84
+            },{
+              "ClientDocument":"33009217838","IssueMonth":9,"IssueYear":2013,"InvoiceValue":3922.6700000000005
+            },{
+              "ClientDocument":"33009217838","IssueMonth":9,"IssueYear":2014,"InvoiceValue":423.0
+            },{
+              "ClientDocument":"33009217838","IssueMonth":10,"IssueYear":2012,"InvoiceValue":198.27
+            },{
+              "ClientDocument":"33009217838","IssueMonth":10,"IssueYear":2013,"InvoiceValue":3116.2299999999991
+            },{
+              "ClientDocument":"33009217838","IssueMonth":10,"IssueYear":2014,"InvoiceValue":139.29
+            },{
+              "ClientDocument":"33009217838","IssueMonth":11,"IssueYear":2012,"InvoiceValue":196.46999999999997
+            },{
+              "ClientDocument":"33009217838","IssueMonth":11,"IssueYear":2013,"InvoiceValue":688.97
+            },{
+              "ClientDocument":"33009217838","IssueMonth":11,"IssueYear":2014,"InvoiceValue":318.67000000000007
+            },{
+              "ClientDocument":"33009217838","IssueMonth":12,"IssueYear":2012,"InvoiceValue":91.88000000000001
+            },{
+              "ClientDocument":"33009217838","IssueMonth":12,"IssueYear":2013,"InvoiceValue":1947.35
+            },{
+              "ClientDocument":"33009217838","IssueMonth":12,"IssueYear":2014,"InvoiceValue":313.42
+            },{
+              "ClientDocument":"35897402809","IssueMonth":1,"IssueYear":2012,"InvoiceValue":1576.2799999999998
+            },{
+              "ClientDocument":"35897402809","IssueMonth":1,"IssueYear":2013,"InvoiceValue":147.68
+            },{
+              "ClientDocument":"35897402809","IssueMonth":1,"IssueYear":2014,"InvoiceValue":1173.59
+            },{
+              "ClientDocument":"35897402809","IssueMonth":1,"IssueYear":2015,"InvoiceValue":940.87999999999988
+            },{
+              "ClientDocument":"35897402809","IssueMonth":2,"IssueYear":2012,"InvoiceValue":456.03000000000003
+            },{
+              "ClientDocument":"35897402809","IssueMonth":2,"IssueYear":2013,"InvoiceValue":1718.04
+            },{
+              "ClientDocument":"35897402809","IssueMonth":2,"IssueYear":2014,"InvoiceValue":579.49
+            },{
+              "ClientDocument":"35897402809","IssueMonth":2,"IssueYear":2015,"InvoiceValue":484.14
+            },{
+              "ClientDocument":"35897402809","IssueMonth":3,"IssueYear":2012,"InvoiceValue":903.46
+            },{
+              "ClientDocument":"35897402809","IssueMonth":3,"IssueYear":2013,"InvoiceValue":672.86
+            },{
+              "ClientDocument":"35897402809","IssueMonth":3,"IssueYear":2014,"InvoiceValue":1582.77
+            },{
+              "ClientDocument":"35897402809","IssueMonth":3,"IssueYear":2015,"InvoiceValue":2218.0499999999993
+            },{
+              "ClientDocument":"35897402809","IssueMonth":4,"IssueYear":2012,"InvoiceValue":870.47
+            },{
+              "ClientDocument":"35897402809","IssueMonth":4,"IssueYear":2013,"InvoiceValue":569.06000000000006
+            },{
+              "ClientDocument":"35897402809","IssueMonth":4,"IssueYear":2014,"InvoiceValue":1125.4300000000003
+            },{
+              "ClientDocument":"35897402809","IssueMonth":4,"IssueYear":2015,"InvoiceValue":555.65000000000009
+            },{
+              "ClientDocument":"35897402809","IssueMonth":5,"IssueYear":2012,"InvoiceValue":716.99000000000012
+            },{
+              "ClientDocument":"35897402809","IssueMonth":5,"IssueYear":2013,"InvoiceValue":2387.6499999999996
+            },{
+              "ClientDocument":"35897402809","IssueMonth":5,"IssueYear":2014,"InvoiceValue":965.83999999999992
+            },{
+              "ClientDocument":"35897402809","IssueMonth":5,"IssueYear":2015,"InvoiceValue":360.56
+            },{
+              "ClientDocument":"35897402809","IssueMonth":6,"IssueYear":2012,"InvoiceValue":301.71000000000004
+            },{
+              "ClientDocument":"35897402809","IssueMonth":6,"IssueYear":2013,"InvoiceValue":2151.86
+            },{
+              "ClientDocument":"35897402809","IssueMonth":6,"IssueYear":2014,"InvoiceValue":813.48
+            },{
+              "ClientDocument":"35897402809","IssueMonth":7,"IssueYear":2012,"InvoiceValue":594.7
+            },{
+              "ClientDocument":"35897402809","IssueMonth":7,"IssueYear":2013,"InvoiceValue":408.2
+            },{
+              "ClientDocument":"35897402809","IssueMonth":7,"IssueYear":2014,"InvoiceValue":954.81000000000006
+            },{
+              "ClientDocument":"35897402809","IssueMonth":8,"IssueYear":2012,"InvoiceValue":576.44
+            },{
+              "ClientDocument":"35897402809","IssueMonth":8,"IssueYear":2013,"InvoiceValue":1703.29
+            },{
+              "ClientDocument":"35897402809","IssueMonth":8,"IssueYear":2014,"InvoiceValue":611.43000000000006
+            },{
+              "ClientDocument":"35897402809","IssueMonth":9,"IssueYear":2012,"InvoiceValue":385.23
+            },{
+              "ClientDocument":"35897402809","IssueMonth":9,"IssueYear":2013,"InvoiceValue":506.84999999999997
+            },{
+              "ClientDocument":"35897402809","IssueMonth":9,"IssueYear":2014,"InvoiceValue":1002.0000000000001
+            },{
+              "ClientDocument":"35897402809","IssueMonth":10,"IssueYear":2012,"InvoiceValue":153.5
+            },{
+              "ClientDocument":"35897402809","IssueMonth":10,"IssueYear":2013,"InvoiceValue":6627.4000000000015
+            },{
+              "ClientDocument":"35897402809","IssueMonth":10,"IssueYear":2014,"InvoiceValue":995.68000000000006
+            },{
+              "ClientDocument":"35897402809","IssueMonth":11,"IssueYear":2012,"InvoiceValue":1522.0700000000004
+            },{
+              "ClientDocument":"35897402809","IssueMonth":11,"IssueYear":2013,"InvoiceValue":1302.5800000000002
+            },{
+              "ClientDocument":"35897402809","IssueMonth":11,"IssueYear":2014,"InvoiceValue":1259.94
+            },{
+              "ClientDocument":"35897402809","IssueMonth":12,"IssueYear":2012,"InvoiceValue":573.82
+            },{
+              "ClientDocument":"35897402809","IssueMonth":12,"IssueYear":2013,"InvoiceValue":1270.28
+            },{
+              "ClientDocument":"35897402809","IssueMonth":12,"IssueYear":2014,"InvoiceValue":1240.0499999999997
+            },{
+              "ClientDocument":"59140321800","IssueMonth":1,"IssueYear":2012,"InvoiceValue":736.26
+            },{
+              "ClientDocument":"59140321800","IssueMonth":1,"IssueYear":2013,"InvoiceValue":715.89
+            },{
+              "ClientDocument":"59140321800","IssueMonth":1,"IssueYear":2015,"InvoiceValue":820.08999999999992
+            },{
+              "ClientDocument":"59140321800","IssueMonth":2,"IssueYear":2012,"InvoiceValue":548.12000000000012
+            },{
+              "ClientDocument":"59140321800","IssueMonth":2,"IssueYear":2013,"InvoiceValue":312.15999999999997
+            },{
+              "ClientDocument":"59140321800","IssueMonth":2,"IssueYear":2015,"InvoiceValue":559.19999999999993
+            },{
+              "ClientDocument":"59140321800","IssueMonth":3,"IssueYear":2012,"InvoiceValue":310.21
+            },{
+              "ClientDocument":"59140321800","IssueMonth":3,"IssueYear":2013,"InvoiceValue":444.52
+            },{
+              "ClientDocument":"59140321800","IssueMonth":3,"IssueYear":2015,"InvoiceValue":515.2
+            },{
+              "ClientDocument":"59140321800","IssueMonth":4,"IssueYear":2012,"InvoiceValue":1582.41
+            },{
+              "ClientDocument":"59140321800","IssueMonth":4,"IssueYear":2013,"InvoiceValue":226.88
+            },{
+              "ClientDocument":"59140321800","IssueMonth":4,"IssueYear":2014,"InvoiceValue":667.19
+            },{
+              "ClientDocument":"59140321800","IssueMonth":5,"IssueYear":2012,"InvoiceValue":877.7
+            },{
+              "ClientDocument":"59140321800","IssueMonth":5,"IssueYear":2013,"InvoiceValue":320.57000000000005
+            },{
+              "ClientDocument":"59140321800","IssueMonth":5,"IssueYear":2014,"InvoiceValue":1007.48
+            },{
+              "ClientDocument":"59140321800","IssueMonth":6,"IssueYear":2012,"InvoiceValue":1209.08
+            },{
+              "ClientDocument":"59140321800","IssueMonth":6,"IssueYear":2013,"InvoiceValue":1018.4
+            },{
+              "ClientDocument":"59140321800","IssueMonth":6,"IssueYear":2014,"InvoiceValue":793.32999999999981
+            },{
+              "ClientDocument":"59140321800","IssueMonth":7,"IssueYear":2012,"InvoiceValue":405.19999999999993
+            },{
+              "ClientDocument":"59140321800","IssueMonth":7,"IssueYear":2013,"InvoiceValue":479.27
+            },{
+              "ClientDocument":"59140321800","IssueMonth":7,"IssueYear":2014,"InvoiceValue":165.98
+            },{
+              "ClientDocument":"59140321800","IssueMonth":8,"IssueYear":2012,"InvoiceValue":506.03
+            },{
+              "ClientDocument":"59140321800","IssueMonth":8,"IssueYear":2013,"InvoiceValue":448.37
+            },{
+              "ClientDocument":"59140321800","IssueMonth":8,"IssueYear":2014,"InvoiceValue":473.27000000000004
+            },{
+              "ClientDocument":"59140321800","IssueMonth":9,"IssueYear":2012,"InvoiceValue":1018.9400000000003
+            },{
+              "ClientDocument":"59140321800","IssueMonth":9,"IssueYear":2013,"InvoiceValue":1219.5400000000002
+            },{
+              "ClientDocument":"59140321800","IssueMonth":9,"IssueYear":2014,"InvoiceValue":900.94999999999982
+            },{
+              "ClientDocument":"59140321800","IssueMonth":10,"IssueYear":2012,"InvoiceValue":1512.5
+            },{
+              "ClientDocument":"59140321800","IssueMonth":10,"IssueYear":2013,"InvoiceValue":671.0100000000001
+            },{
+              "ClientDocument":"59140321800","IssueMonth":10,"IssueYear":2014,"InvoiceValue":859.15
+            },{
+              "ClientDocument":"59140321800","IssueMonth":11,"IssueYear":2012,"InvoiceValue":1569.98
+            },{
+              "ClientDocument":"59140321800","IssueMonth":11,"IssueYear":2013,"InvoiceValue":1309.43
+            },{
+              "ClientDocument":"59140321800","IssueMonth":11,"IssueYear":2014,"InvoiceValue":1360.3199999999997
+            },{
+              "ClientDocument":"59140321800","IssueMonth":12,"IssueYear":2012,"InvoiceValue":888.17
+            },{
+              "ClientDocument":"59140321800","IssueMonth":12,"IssueYear":2013,"InvoiceValue":1054.8600000000001
+            },{
+              "ClientDocument":"59140321800","IssueMonth":12,"IssueYear":2014,"InvoiceValue":1640.28
+            }
+          ]
+        };
+        
+    //Dimensions to filter
+    var dim = {};
+    //Groups to fitler
+    var group = {};
+    
+    var filter = crossfilter(nfp.value);
+    
+    var yearChart = dc.barChart("#yearChart");
+    var all;
+    (function() {        
+        
+        all = filter.groupAll();
+        
+          dim.year = filter.dimension(
+            function (yearMonthValue) {
+              return yearMonthValue.IssueYear;
+            }
+          );
+          group.year = dim.year.group();
+          
+          
+          
+          
+          
+          
+          
+          var coluna = 100;
+          
+          
+        yearChart
+          .data(nfp.value)
+          .width((coluna * 10) - 45)
+          .height(180)
+          .gap(10)
+          .dimension(dim.year)
+          .group(group.year)
+          .elasticY(true)
+//          //.x(d3.time.scale().domain([2012,2015]))
+          .x(d3.scale.linear().domain([dim.year.bottom(1)[0].IssueYear,dim.year.top(1)[0].IssueYear]))
+          //.xUnits(d3.)
+          .margins({ top: 5, left: 25, right: 25, bottom: 45 })
+          .centerBar(true)       
+         .on("renderlet", function (chart) {
+           console.log("erro");
+              chart.selectAll("g.x text").attr('dx', '-25').attr('dy', '-10').attr('transform', "rotate(-90)");
+          })          
+          //.colors(d3.scale.linear().domain([0, 1, 2, 3, 4, 5, 6])
+          //.range(["#ADD8E6", "steelblue", "steelblue", "steelblue", "steelblue", "steelblue", "#ADD8E6"]))
+          //.colorAccessor(function (d) {
+          //    return d.data.key.getDay()
+          //})
+          .xAxis()        
+          .ticks(group.year.size(150));
+          
+          
+            dc.dataCount(".count")
+         .dimension(filter)
+         .group(all);
+         
+         
+         
+         yearChart.render();
+         
+         
+         
+         
+//         
+//         
+//         
+//var chart = dc.barChart("#yearChart");
+//var data          = [ 
+//  { 'Expt': 1, 'Run': 1, 'Speed': 85, 'title': 'Title1'  }, 
+//  { 'Expt': 1, 'Run': 2, 'Speed': 34, 'title': 'Title2'  }, 
+//  { 'Expt': 1, 'Run': 3,  'Speed': 90, 'title': 'Title3' }, 
+//  { 'Expt': 1, 'Run': 4, 'Speed': 107, 'title': 'Title4' }
+//];
+//var ndx                   = crossfilter(data),
+//      runDimension        = ndx.dimension(function(d) {return +d.Run;}),
+//      speedSumGroup       = runDimension.group().reduceSum(function(d) {return d.Speed;});
+//console.log('time: ' + new Date().getTime());
+///*console.log(chart);*/
+//  chart
+//    .width(768)
+//    .height(480)
+//    .gap(20)
+//    .x(d3.scale.linear().domain([dim.year.bottom(1)[0].IssueYear,dim.year.top(1)[0].IssueYear]))
+//    .brushOn(false)
+//    .centerBar(true)
+//    .renderLabel(true)
+//    .yAxisLabel("Y Axis")
+//    .elasticX(true)
+//    .dimension(runDimension)
+//    .group(speedSumGroup)
+//    .renderTitle(true).title(function (d) {
+//      return 'test: ' + d.value;
+//        })
+//    .renderHorizontalGridLines(true)
+//    .label(function (d) {
+//            console.log(d);
+//            return 'test';
+//        });
+//
+//
+//  chart.render();
+//
+//labels = chart.g().selectAll("rect.bar text");
+//console.log(labels);
+         
+         
+         
+               })();
+         
+//         var barChart = dc.rowChart("#yearChart");
+//    
+//barChart  
+//    .dimension(dim.year)
+//    .group(dim.group);
+         
+          
+          
+          
+  
+      </script>
+  </body>
+
+</html>
